@@ -1,94 +1,146 @@
-html {
-  font-size: 10px;
-  box-sizing: border-box;
-}
-
-*, *:before, *:after {
-  box-sizing: inherit;
-}
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 body {
-  margin: 0;
-  padding: 0;
-  font-family: sans-serif;
-  background-color: #3BC1AC;
-  display: flex;
-  min-height: 100vh;
-  align-items: center;
-
-  background-image:
-  radial-gradient(circle at 100% 150%, #3BC1AC 24%, #42D2BB 25%, #42D2BB 28%, #3BC1AC 29%, #3BC1AC 36%, #42D2BB 36%, #42D2BB 40%, transparent 40%, transparent),
-  radial-gradient(circle at 0    150%, #3BC1AC 24%, #42D2BB 25%, #42D2BB 28%, #3BC1AC 29%, #3BC1AC 36%, #42D2BB 36%, #42D2BB 40%, transparent 40%, transparent),
-  radial-gradient(circle at 50%  100%, #42D2BB 10%, #3BC1AC 11%, #3BC1AC 23%, #42D2BB 24%, #42D2BB 30%, #3BC1AC 31%, #3BC1AC 43%, #42D2BB 44%, #42D2BB 50%, #3BC1AC 51%, #3BC1AC 63%, #42D2BB 64%, #42D2BB 71%, transparent 71%, transparent),
-  radial-gradient(circle at 100% 50%, #42D2BB 5%, #3BC1AC 6%, #3BC1AC 15%, #42D2BB 16%, #42D2BB 20%, #3BC1AC 21%, #3BC1AC 30%, #42D2BB 31%, #42D2BB 35%, #3BC1AC 36%, #3BC1AC 45%, #42D2BB 46%, #42D2BB 49%, transparent 50%, transparent),
-  radial-gradient(circle at 0    50%, #42D2BB 5%, #3BC1AC 6%, #3BC1AC 15%, #42D2BB 16%, #42D2BB 20%, #3BC1AC 21%, #3BC1AC 30%, #42D2BB 31%, #42D2BB 35%, #3BC1AC 36%, #3BC1AC 45%, #42D2BB 46%, #42D2BB 49%, transparent 50%, transparent);
-  background-size:100px 50px;
+    font-family: sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: linear-gradient(to bottom right, #5ed1b7, #3da08f);
+    padding: 20px;
+    box-sizing: border-box;
+    background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="%23ffffff" fill-opacity="0.1"><circle cx="0" cy="0" r="15"/><circle cx="100" cy="100" r="15"/><circle cx="0" cy="100" r="15"/><circle cx="100" cy="0" r="15"/></svg>');
+    background-size: 50px 50px;
 }
 
-.voiceinator {
-  padding: 2rem;
-  width: 50rem;
-  margin: 0 auto;
-  border-radius: 1rem;
-  position: relative;
-  background: white;
-  overflow: hidden;
-  z-index: 1;
-  box-shadow: 0 0 5px 5px rgba(0,0,0,0.1);
+.container {
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    width: 100%;
+    max-width: 500px;
+    text-align: center;
+    position: relative;
 }
 
 h1 {
-  width: calc(100% + 4rem);
-  margin: -2rem 0 2rem -2rem;
-  padding: .5rem;
-  background: #ffc600;
-  border-bottom: 5px solid #F3C010;
-  text-align: center;
-  font-size: 5rem;
-  font-weight: 100;
-  font-family: 'Pacifico', cursive;
-  text-shadow: 3px 3px 0 #F3C010;
+    font-family: 'Pacifico', cursive;
+    font-size: 3.5em;
+    color: #ffc107;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.voiceinator input,
-.voiceinator button,
-.voiceinator select,
-.voiceinator textarea {
-  width: 100%;
-  display: block;
-  margin: 10px 0;
-  padding: 10px;
-  border: 0;
-  font-size: 2rem;
-  background: #F7F7F7;
-  outline: 0;
+.input-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #555;
+}
+
+select,
+textarea {
+    width: calc(100% - 20px);
+    padding: 12px 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1em;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+select:focus,
+textarea:focus {
+    border-color: #ffc107;
 }
 
 textarea {
-  height: 20rem;
+    resize: vertical;
+    min-height: 120px;
+    max-height: 250px;
 }
 
-input[type="select"] {
-
+.slider-group {
+    margin-bottom: 20px;
+    text-align: left;
 }
 
-.voiceinator button {
-  background: #ffc600;
-  border: 0;
-  width: 49%;
-  float: left;
-  font-family: 'Pacifico', cursive;
-  margin-bottom: 0;
-  font-size: 2rem;
-  border-bottom: 5px solid #F3C010;
-  cursor: pointer;
-  position: relative;
+input[type="range"] {
+    width: 100%;
+    -webkit-appearance: none;
+    height: 8px;
+    border-radius: 5px;
+    background: #ddd;
+    outline: none;
+    transition: background 0.15s ease-in-out;
+    margin-top: 10px;
 }
 
-.voiceinator button:active {
-  top: 2px;
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #007bff;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
-.voiceinator button:nth-of-type(1) {
-  margin-right: 2%;
+input[type="range"]::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #007bff;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+    margin-top: 30px;
+}
+
+button {
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    width: 100%;
+}
+
+button.stop-btn {
+    background-color: #f44336;
+    color: white;
+}
+
+button.stop-btn:hover {
+    background-color: #d32f2f;
+    transform: translateY(-2px);
+}
+
+button.speak-btn {
+    background-color: #ffc107;
+    color: #333;
+}
+
+button.speak-btn:hover {
+    background-color: #e0a800;
+    transform: translateY(-2px);
+}
+
+.message {
+    margin-top: 20px;
+    color: red;
+    font-weight: bold;
 }
